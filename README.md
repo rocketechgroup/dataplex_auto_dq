@@ -14,3 +14,5 @@ python main.py
 ```
 
 The output will look like [data_quality_check.yaml](examples/data_quality_check.yaml)
+
+For instructions to use the GCLOUD CLI to import the YAML and create the data quality scan, see [data quality scan](https://cloud.google.com/dataplex/docs/use-auto-data-quality#gcloud)
