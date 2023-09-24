@@ -5,6 +5,8 @@
 This script will extract the YAML from a Dataplex Data Quality Scan and print it to STDOUT.
 
 ```
+pip install -r requirements.txt
+
 export PROJECT=<your gcp project>
 export LOCATION=<your gcp location where the table is located>
 export DATA_SCAN=<your id of the data quality scan>
