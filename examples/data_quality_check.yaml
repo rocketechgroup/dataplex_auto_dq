@@ -1,0 +1,64 @@
+rules:
+  - column: bike_id
+    dimension: COMPLETENESS
+    nonNullExpectation: { }
+    threshold: 0.99
+  - column: bike_model
+    dimension: VALIDITY
+    rowConditionExpectation:
+      sql_expression: (LENGTH(`bike_model`) >= 0 AND LENGTH(`bike_model`) <= 10) OR
+        `bike_model` IS NULL
+    threshold: 1.0
+  - column: duration
+    dimension: COMPLETENESS
+    nonNullExpectation: { }
+    threshold: 0.99
+  - column: duration_ms
+    dimension: COMPLETENESS
+    nonNullExpectation: { }
+    threshold: 0.99
+  - column: end_date
+    dimension: COMPLETENESS
+    nonNullExpectation: { }
+    threshold: 0.99
+  - column: end_station_id
+    dimension: COMPLETENESS
+    nonNullExpectation: { }
+    threshold: 0.99
+  - column: end_station_name
+    dimension: COMPLETENESS
+    nonNullExpectation: { }
+    threshold: 0.99
+  - column: end_station_name
+    dimension: VALIDITY
+    rowConditionExpectation:
+      sql_expression: (LENGTH(`end_station_name`) >= 4 AND LENGTH(`end_station_name`)
+        <= 56) OR `end_station_name` IS NULL
+    threshold: 1.0
+  - column: rental_id
+    dimension: COMPLETENESS
+    nonNullExpectation: { }
+    threshold: 1.0
+  - column: rental_id
+    dimension: UNIQUENESS
+    threshold: 0.0
+    uniquenessExpectation: { }
+  - column: start_date
+    dimension: COMPLETENESS
+    nonNullExpectation: { }
+    threshold: 1.0
+  - column: start_station_id
+    dimension: COMPLETENESS
+    nonNullExpectation: { }
+    threshold: 1.0
+  - column: start_station_name
+    dimension: COMPLETENESS
+    nonNullExpectation: { }
+    threshold: 1.0
+  - column: start_station_name
+    dimension: VALIDITY
+    rowConditionExpectation:
+      sql_expression: (LENGTH(`start_station_name`) >= 4 AND LENGTH(`start_station_name`)
+        <= 56) OR `start_station_name` IS NULL
+    threshold: 1.0
+samplingPercent: 20.0
