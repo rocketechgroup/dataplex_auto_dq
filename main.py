@@ -52,7 +52,7 @@ def get_data_scan(project, location, data_scan):
         elif rule.set_expectation:
             output_rules.append({
                 'setExpectation': {
-                    'values': rule.set_expectation.values
+                    'values': list(rule.set_expectation.values)
                 },
                 'column': rule.column,
                 'dimension': rule.dimension,
