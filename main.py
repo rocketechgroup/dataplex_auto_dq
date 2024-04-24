@@ -18,7 +18,7 @@ def get_data_scan(project, location, data_scan):
     def parse_condition_expectation(condition_name, condition_expectation, column, dimension, threshold):
         return {
             condition_name: {
-                'sql_expression': condition_expectation.sql_expression
+                'sqlExpression': condition_expectation.sql_expression
             },
             'column': column,
             'dimension': dimension,
