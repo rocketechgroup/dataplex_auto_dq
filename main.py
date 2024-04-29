@@ -18,7 +18,7 @@ def get_data_scan(project, location, data_scan):
     def parse_condition_expectation(condition_name, condition_expectation, column, dimension, threshold):
         return {
             condition_name: {
-                'sql_expression': condition_expectation.sql_expression
+                'sqlExpression': condition_expectation.sql_expression
             },
             'column': column,
             'dimension': dimension,
@@ -52,7 +52,7 @@ def get_data_scan(project, location, data_scan):
         elif rule.set_expectation:
             output_rules.append({
                 'setExpectation': {
-                    'values': rule.set_expectation.values
+                    'values': list(rule.set_expectation.values)
                 },
                 'column': rule.column,
                 'dimension': rule.dimension,
